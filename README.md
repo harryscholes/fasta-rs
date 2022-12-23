@@ -5,13 +5,12 @@ FASTA file parser implemented in Rust using [Chumsky](https://github.com/zestere
 ## Usage
 
 ```rs
-use fasta_rs::{parser, Parser};
+use fasta_rs::{parser, Parser, Record};
 
 fn main() {
-    let fasta_file = std::fs::read_to_string(std::env::args().nth(1).unwrap()).unwrap();
-    println!("{:?}", parser().parse(fasta_file).unwrap());
+    let fasta_file = String::from(">...");
+    let records: Vec<Record> = parser().parse(fasta_file).unwrap();
 }
-
 ```
 
 ```
